@@ -684,4 +684,6 @@ if __name__ == '__main__':
                         help    = "Pac Server Port [OPTIONAL], examples: 8970")
     args = parser.parse_args()
     generate_pac(args.proxy)
-    pac_server(int(args.port))
+    nport = int(args.port)
+    if nport>0:
+        pac_server(nport)
